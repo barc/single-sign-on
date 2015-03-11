@@ -1,7 +1,6 @@
 # Barc.com Dedicated Examples
 
-Barc offers many plans. These examples cover single sign on integration
-with your application.
+These examples detail how to integrate single sign on with your application.
 
 ## Examples
 

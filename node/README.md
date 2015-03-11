@@ -1,11 +1,7 @@
 # Barc.com single-sign-on with node.js
 
-This example explains how to integrate Barc's embedded chat with your node.js
-application.
-
-Barc offers many plans. We'll go over the dedicated/enterprise plan. The
-document details the steps needed to do single-sign-on to give your userss the
-best experience possible.
+This example explains how to integrate Barc's embedded chat and perform
+signgle sign on with node.js.
 
 ## Setup
 
