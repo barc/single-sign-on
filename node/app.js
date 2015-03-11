@@ -8,8 +8,8 @@ var request = require('request');
 // Dummy data which are the kind credentials provided to you by BARC.
 // Replace them with your credentials.
 var credentials = {
-  clientId: 'alphadraft-335c1d61c9fcf364196b594c48751167',
-  clientSecret: '05e394410819be40cd434a48d50c3d6f5bff9d90197a5dc2e043a32f0457e451',
+  clientId: 'alphadraft-62487bec124189be4b6c0bc2e5127f58',
+  clientSecret: '87efc2adf19099299a602053f72cb39d33435e6588759fc930a44bddbfeaaa17',
   dedicatedHost: 'alphadraft.barc.com'
 };
 
@@ -21,7 +21,7 @@ var indexPage = fs.readFileSync('index.html', 'utf8');
 var compiled = _.template(indexPage);
 
 // The login of the user whom you want to sign into chat.
-var login = 'supermario';
+var login = 'AlphaDraft';
 
 // The handler for the home page
 function renderHomePage(req, res) {
@@ -42,11 +42,11 @@ function renderHomePage(req, res) {
     }
 
     // Barc returns a JSON payload like this { 'token': 'BACF1230' }
-    var body = JSON.parse(bod);
+    var token = JSON.parse(bod).token;
 
     // Set the token in your template engine and render the page
     res.type('text/html');
-    res.send(compiled({dedicatedHost: credentials.dedicatedHost, token: body.token}));
+    res.send(compiled({dedicatedHost: credentials.dedicatedHost, token: token}));
   });
 }
 
