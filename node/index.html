@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html, body, #page-content {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            text-align: center;
+            vertical-align: middle;
+            background-color: #fff;
+        }
+
+        #content {
+            margin-right: 200px;
+            padding: 20px;
+            border-left: solid 1px #aaa;
+        }
+
+        #page-header {
+            height: 50px;
+            background-color: #333;
+        }
+
+        #page-content {
+            text-align: left;
+            width: 100%;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+
+        #barc_container {
+            height: 600px;
+            margin-top: 20px;
+        }
+    </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div id="page-content">
+    <div id='content'>
+        <h1>AlphaDraft</h1>
+        <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lorem dolor. Aliquam vitae neque at
+            massa interdum ullamcorper. Duis orci urna, sagittis posuere porta in, vulputate id tellus. Nunc hendrerit
+            congue tincidunt. In elementum sem in diam congue lobortis. Sed fringilla adipiscing blandit. Etiam ut
+            blandit ligula.
+        </div>
+        <div>
+        </div>
+        <!-- Embedded chat is inserted into this DIV -->
+        <div id="barc_container"></div>
+    </div>
+</div>
+
+<script>
+    var _barcOptions = {
+        // inline style
+        container: "#barc_container",
+        position: "container",
+
+        userCount: false,
+        useButton: true,
+        startOpen: true,
+        resizeHeight: true,
+        embedType: 'u',
+        topOffset: '150px',
+        logoColor: 'black',
+        hidePosts: false,
+        hidePages: true,
+        reps: []
+    };
+    (function () {
+        var d = document, g = d.createElement('script'), p = 'https:' === d.location.protocol ? 'https' : 'http';
+        g.src = p + '://<%= dedicatedHost %>/single-sign-on?token=<%= token %>';
+        d.body.appendChild(g)
+    })();
+</script>
+
+</body>
+</html>
+
