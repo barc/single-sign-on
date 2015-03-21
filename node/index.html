@@ -75,7 +75,7 @@
     };
     (function () {
         var d = document, g = d.createElement('script'), p = 'https:' === d.location.protocol ? 'https' : 'http';
-        g.src = p + '://<%= dedicatedHost %>/single-sign-on?token=<%= token %>';
+        g.src = p + '://<%= dedicatedHost %>/single-sign-on?token=<%= token %>&' + Math.floor(Math.random() * 1000000);
         d.body.appendChild(g)
     })();
 </script>
